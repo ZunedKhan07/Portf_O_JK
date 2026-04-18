@@ -44,7 +44,7 @@ const addProject = async(req, res) => {
         })
     
         if(!newProject){
-            res.status(401).json({
+            res.status(400).json({
                 seccess: false,
                 message: "Something went wrong in creating new project!"
             })
@@ -55,9 +55,16 @@ const addProject = async(req, res) => {
             data: newProject
         })
     } catch (err) {
+        console.error(err);
+
         res.status(500).json({
-            seccess: false,
+            success: false,
             message: "Failed to create project"
         })
     }
+}
+
+export {
+    getProject,
+    addProject
 }

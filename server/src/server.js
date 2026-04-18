@@ -12,6 +12,13 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+import projectRouter from './routes/project.route.js';
+import aiChatRouter from './routes/aiChat.route.js';
+
+app.use('/api/v1', projectRouter);
+app.use('/api/v1', aiChatRouter);
+
+
 app.get("/", (req, res) => {
     res.send("Server is running 🚀");
 })
