@@ -7,9 +7,9 @@ export const chatWithAI = async(req, res) => {
         const { message } = req.body;
 
         if (!message) {
-            res.status(401).json({
+            return res.status(400).json({
                 message: "Message is required!",
-                seccess: false
+                success: false
             });
         }
 
@@ -58,8 +58,8 @@ export const chatWithAI = async(req, res) => {
                 "MDN",
                 "freeCodeCamp",
                 "Zulip",
-                "RocketCaht",
-                "FaceBook/react",
+                "RocketChat",
+                "Facebook/react",
                 "CircuitVerse/CircuitVerse",
                 "The Odin Project"
             ]
@@ -73,8 +73,6 @@ export const chatWithAI = async(req, res) => {
             Database: ${skills.database.join(", ")}
             Open Source: ${skills.opensource.join(", ")}
             `;
-
-            const projects = await Project.find();
 
             const projectText = projects.map(p => 
                 `${p.title}: ${p.description}`
@@ -114,7 +112,11 @@ export const chatWithAI = async(req, res) => {
             `;
         };
 
-        const result = model.generateContent(buildPrompt);
+        const projects = await Project.find();
+
+        const prompt = buildPrompt(message, projects);
+
+        const result = await model.generateContent(prompt);
         const response = result.response.text();
 
         await AIChat.create({
@@ -122,9 +124,9 @@ export const chatWithAI = async(req, res) => {
             answer: response
         });
 
-        res.status(201).json({
+        res.status(200).json({
             success: true,
-            fromCache: true,
+            fromCache: false,
             data: response
         })
         

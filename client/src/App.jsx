@@ -1,10 +1,9 @@
 import React from 'react'
+import Home from './pages/Home'
 
 const App = () => {
   return (
-    <div className='bg-amber-50, text-black'>
-      Hello in my smart portfolio
-    </div>
+    < Home />
   )
 }
 

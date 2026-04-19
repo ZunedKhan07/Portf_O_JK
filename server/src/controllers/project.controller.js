@@ -4,11 +4,11 @@ const getProject = async(req, res) => {
     try {
         const project = await Project.find().sort({ createdAt: -1 });
 
-        if(!projest){
-            res.status(401).json({
-                success: false,
-                message: "Project not Found!"
-            })
+        if (!project || project.length === 0) {
+            return res.status(200).json({
+                success: true,
+                data: []
+            });
         }
 
         res.status(200).json({
@@ -16,6 +16,7 @@ const getProject = async(req, res) => {
             data: project
         })
     } catch (err) {
+        console.error("ERROR:", err);
         res.status(500).json({
             success: false,
             message: "Failed to fetch projects"
@@ -29,7 +30,7 @@ const addProject = async(req, res) => {
     
         if(!title){
             res.status(404)
-               .jsson({
+               .json({
                     success: false,
                     message: "title is required!"
                })
@@ -44,8 +45,8 @@ const addProject = async(req, res) => {
         })
     
         if(!newProject){
-            res.status(400).json({
-                seccess: false,
+            return res.status(400).json({
+                success: false,
                 message: "Something went wrong in creating new project!"
             })
         }
@@ -55,7 +56,7 @@ const addProject = async(req, res) => {
             data: newProject
         })
     } catch (err) {
-        console.error(err);
+        console.error("ERROR : ", err);
 
         res.status(500).json({
             success: false,
