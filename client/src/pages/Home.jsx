@@ -1,18 +1,41 @@
-import { useEffect } from "react";
-import { getProject } from "../services/projects.service";
+import Navbar from "../components/layout/Navbar";
+import Footer from "../components/layout/Footer";
 
-function Home() {
+import Hero from "../components/home/Hero";
+import Stats from "../components/home/Stats";
+import TechStack from "../components/home/TechStack";
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await getProject();
-      console.log(data);
-    };
+import ChatBox from "../components/ai/ChatBox";
+import ProjectList from "../components/projects/ProjectList";
 
-    fetchData();
-  }, []);
+export default function Home() {
+  return (
+    <>
+      <Navbar />
 
-  return <h1>Home</h1>;
+      <div className="bg-[#0b0f19] text-white min-h-screen px-6 py-10">
+        
+        {/* Top Section */}
+        <div className="grid lg:grid-cols-2 gap-10 items-center">
+          <div>
+            <Hero />
+            <Stats />
+          </div>
+
+          <ChatBox />
+        </div>
+
+        {/* Tech Stack */}
+        <TechStack />
+
+        {/* Projects */}
+        <div className="mt-16">
+          <ProjectList />
+        </div>
+
+      </div>
+
+      <Footer />
+    </>
+  );
 }
-
-export default Home;
