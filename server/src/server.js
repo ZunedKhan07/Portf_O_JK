@@ -5,6 +5,8 @@ import connect_DB from './config/db.js';
 
 dotenv.config();
 
+console.log("ENV TEST:", process.env.GEMINI_API_KEY);
+
 connect_DB()
 
 const app = express();
