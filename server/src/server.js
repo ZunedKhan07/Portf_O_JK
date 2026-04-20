@@ -11,7 +11,9 @@ connect_DB()
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+    origin: "*";
+}));
 app.use(express.json());
 
 import projectRouter from './routes/project.route.js';
