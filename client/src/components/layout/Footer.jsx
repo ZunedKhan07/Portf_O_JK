@@ -27,10 +27,37 @@ export default function Footer() {
           <p>© {new Date().getFullYear()} Juned Khan. All rights reserved.</p>
 
           <div className="flex gap-4">
-            <a href="#" className="hover:text-white">GitHub</a>
-            <a href="#" className="hover:text-white">LinkedIn</a>
-            <a href="#" className="hover:text-white">Twitter</a>
-            <a href="#" className="hover:text-white">Email</a>
+           <a 
+              href="https://github.com/ZunedKhan07" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-white"
+            >
+              GitHub
+            </a>
+
+            <a 
+              href="https://www.linkedin.com/in/juned-khan-062785290" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-white"
+            >
+              LinkedIn
+            </a>
+
+            <a 
+              href="/contact" 
+              className="hover:text-white"
+            >
+              Contact
+            </a>
+
+            <a 
+              href="mailto:zunedkhan107@gmail.com" 
+              className="hover:text-white"
+            >
+              Email
+            </a>
           </div>
 
         </div>
