@@ -48,7 +48,7 @@ export default function Footer() {
             </a>
 
             <a 
-              href="/contact" 
+              href="#contact" 
               className="hover:text-white"
             >
               Contact
