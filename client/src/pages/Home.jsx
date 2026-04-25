@@ -7,6 +7,7 @@ import TechStack from "../components/home/TechStack";
 
 import ChatBox from "../components/ai/ChatBox";
 import ProjectList from "../components/projects/ProjectList";
+import Contact from "../components/home/Contect";
 
 export default function Home() {
   return (
@@ -34,6 +35,8 @@ export default function Home() {
         </div>
 
       </div>
+
+      <Contact />
 
       <Footer />
     </>
