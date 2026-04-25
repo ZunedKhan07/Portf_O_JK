@@ -1,6 +1,6 @@
 export default function Contact() {
   return (
-    <section id="contact" className="mt-20">
+    <section id="contact" className="bg-[#111827] mt-20">
       <h2 className="text-3xl font-bold">Get in Touch</h2>
 
       <p className="text-gray-400 mt-2">
