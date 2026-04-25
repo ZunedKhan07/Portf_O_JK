@@ -21,7 +21,9 @@ export default function Navbar() {
       {/* Right Side */}
       <div className="flex items-center gap-4">
         <button className="bg-purple-600 px-4 py-1.5 rounded-xl text-sm hover:opacity-90">
-          Talk with AI
+          <a href="#chatBox">
+            Talk with AI
+          </a>
         </button>
 
         {/* Mobile Menu Button */}

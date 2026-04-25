@@ -43,7 +43,7 @@ export default function ChatBox() {
   }, [messages, loading]);
 
   return (
-    <div className="bg-[#111827] p-5 rounded-2xl border border-gray-700 shadow-lg flex flex-col h-[450px]">
+    <div id="chatBox" className="bg-[#111827] p-5 rounded-2xl border border-gray-700 shadow-lg flex flex-col h-[450px]">
       
       {/* Header */}
       <div className="flex items-center justify-between mb-3">

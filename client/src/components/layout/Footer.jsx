@@ -17,7 +17,9 @@ export default function Footer() {
           </div>
 
           <button className="bg-purple-600 px-5 py-2 rounded-xl text-white hover:opacity-90">
-            Get In Touch
+            <a href="#contact">
+              Get In Touch
+            </a>
           </button>
         </div>
 
