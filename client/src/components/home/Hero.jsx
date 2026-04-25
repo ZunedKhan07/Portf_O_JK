@@ -20,7 +20,9 @@ export default function Hero() {
           View My Work
         </button>
         <button className="border px-6 py-2 rounded-xl hover:bg-gray-800">
-          Download Resume
+          <a href="JUNED_Port_Resume.pdf" download>
+            Download Resume
+          </a>
         </button>
       </div>
     </div>
