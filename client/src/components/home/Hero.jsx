@@ -17,7 +17,9 @@ export default function Hero() {
 
       <div className="mt-6 flex gap-4">
         <button className="bg-purple-600 px-6 py-2 rounded-xl hover:opacity-90">
-          View My Work
+          <a href="#projects">
+            View My Work
+          </a>
         </button>
         <button className="border px-6 py-2 rounded-xl hover:bg-gray-800">
           <a href="/JUNED_Port_Resume.pdf" download>

@@ -15,7 +15,11 @@ export default function ProjectList() {
 
   return (
     <div id="projects">
-      <h2 className="text-2xl mb-6 font-semibold">Featured Projects</h2>
+      <h2 className="text-2xl mb-6 font-semibold">
+        <section id="projects">
+          Featured Projects
+        </section>
+      </h2>
 
       <div className="grid md:grid-cols-3 gap-6">
         {projects.map((p, i) => (
