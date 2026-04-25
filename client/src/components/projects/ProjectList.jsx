@@ -14,18 +14,23 @@ export default function ProjectList() {
   }, []);
 
   return (
-    <div id="projects">
-      <h2 className="text-2xl mb-6 font-semibold">
-        <section id="projects">
+    <section
+      id="projects"
+      className="bg-[#020617] py-20 px-6"
+    >
+      <div className="max-w-6xl mx-auto">
+        
+        <h2 className="text-2xl mb-6 font-semibold text-white">
           Featured Projects
-        </section>
-      </h2>
+        </h2>
 
-      <div className="grid md:grid-cols-3 gap-6">
-        {projects.map((p, i) => (
-          <ProjectCard key={i} project={p} />
-        ))}
+        <div className="grid md:grid-cols-3 gap-6">
+          {projects.map((p, i) => (
+            <ProjectCard key={i} project={p} />
+          ))}
+        </div>
+
       </div>
-    </div>
+    </section>
   );
 }
